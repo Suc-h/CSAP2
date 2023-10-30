@@ -1,0 +1,11 @@
+G:\PRG\CSAP2\CSAP2\bin\Debug\CSAP2.exe.config
+G:\PRG\CSAP2\CSAP2\bin\Debug\CSAP2.exe
+G:\PRG\CSAP2\CSAP2\bin\Debug\CSAP2.pdb
+G:\PRG\CSAP2\CSAP2\obj\Debug\CSAP2.csproj.AssemblyReference.cache
+G:\PRG\CSAP2\CSAP2\obj\Debug\CSAP2.csproj.SuggestedBindingRedirects.cache
+G:\PRG\CSAP2\CSAP2\obj\Debug\CSAP2.Form1.resources
+G:\PRG\CSAP2\CSAP2\obj\Debug\CSAP2.Properties.Resources.resources
+G:\PRG\CSAP2\CSAP2\obj\Debug\CSAP2.csproj.GenerateResource.cache
+G:\PRG\CSAP2\CSAP2\obj\Debug\CSAP2.csproj.CoreCompileInputs.cache
+G:\PRG\CSAP2\CSAP2\obj\Debug\CSAP2.exe
+G:\PRG\CSAP2\CSAP2\obj\Debug\CSAP2.pdb
