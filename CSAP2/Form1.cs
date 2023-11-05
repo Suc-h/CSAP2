@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CSAP2
@@ -16,52 +10,68 @@ namespace CSAP2
         {
             InitializeComponent();
         }
-        private bool PrimeNumber(int x)
-        {
-            int number = x;
-            if (number == 2 || number == 3) return true;
-            if (number % 2 == 0 || number == 1) return false;
-            for (int i = 3; i <= Math.Sqrt(number); i += 2)
-            {
-                if (number % i == 0)
-                {
-                    return false;
-                }
 
-            }
-            return true;
-        }
-        private bool IsPrime(bool[] pole)
+        private void start_Click(object sender, EventArgs e)
         {
-            return false;
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            int n = (int)numericUpDown1.Value;
-            bool[] pole = new bool[n];
-            for(int i = 0; i < n; i++)
+            try
             {
-                pole[i] = false;
-            }
-            for (int i = 2; i < n; i++)
-            {
-                pole[2] = true;
-                for (int j = i; i < n; i += i)
-                {
-                    
-                    pole[j] = false;
-                }
-                
-            }
-            foreach (bool a in pole)
-            {
-                listBox2.Items.Add(a);
-            }
-        }
+                listBox1.Items.Clear();
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
+                if (textBox1.Text == "")
+                {
+                    textBox1.Text = "2";
+                }
+                int n = Convert.ToInt32(textBox1.Text);
+                List<int> list = new List<int>();
+
+                if (n < 0)
+                {
+                    n = n * -1;
+                }
+                bool[] pole = new bool[n + 1];
+                if (n > 1)
+                {
+                    for (int i = 2; i <= n; i++)
+                    {
+                        pole[i] = true;
+                    }
+                    for (int j = 2; j <= n; j++)
+                    {
+                        if (pole[j])
+                        {
+                            list.Add(j);
+                            for (int k = 2 * j; k <= n; k += k)
+                            {
+                                pole[k] = false;
+                            }
+                        }
+                    }
+                    foreach (int a in list)
+                    {
+                        listBox1.Items.Add(a);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Chyba!", "Pozor", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (OverflowException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (IndexOutOfRangeException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
